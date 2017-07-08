@@ -41,6 +41,16 @@
                 </nav>
                 <div class="main-image">
                     <img src="./wp-content/uploads/2017/07/main-image-adjust-2.jpg" alt="">
-                    <div class="title">안녕하세요!</div>
+
+                        <div class="typewrite title" data-period="2000" data-type='[ "Design.", "Development.", "Wordpress." ]'>
+                            <div class="bracket-left"></div>
+                            <span class="wrap"></span>
+                            <div class="bracket-right"></div>
+                        </div>
+                        <div class="control">
+                            <div class="play-button"><div class="arrow-right"></div></div>
+                            <div class="pause-button"></div>
+                        </div>
+                            
                 </div>
           </header>

@@ -66,7 +66,7 @@ article.post:last-of-type{
 /* 헤더 */
 .site-header img{
   width: 100%;
-  height: 500px;
+  height: auto;
 }
 
 /* 헤더 메뉴 */
@@ -80,8 +80,8 @@ article.post:last-of-type{
     background-color: rgba(255,255,255,0.01);
     padding-left: 25px;
     border: 0;
+    z-index: 1;
 }
-
 .site-header .navbar-brand{
   padding: 15px 0px 15px 30px;
 }
@@ -125,12 +125,63 @@ article.post:last-of-type{
 .site-header .navbar-default .navbar-nav > li > a:hover::before{
   box-shadow: inset 64px 0 0 #ffbc00;
 }
-
 .site-header .navbar-default .navbar-nav > li > a:hover{
   color: white;
 }
 .site-header nav ul li:last-of-type a{
   border-right: 0;
+}
+
+/* 메인 이미지 타이틀 */
+.site-header .main-image{
+  height: 500px;
+  overflow: hidden;
+}
+.site-header .main-image .typewrite.title{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 5rem;
+}
+.typewrite > .wrap::after {
+  content: "|";
+  animation: blink 1s steps(1, end) infinite;
+}
+@keyframes blink{
+    50%{opacity: 0;}
+}
+.control{
+  display: flex;
+  position: absolute;
+  top: 62%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.play-button, .pause-button{
+  border: 1px solid white;
+  padding: 5px 12px;
+  cursor: pointer;
+}
+.play-button{
+  padding: 5px 10px 5px 12px;
+}
+.play-button .arrow-right {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid white;
+}
+.pause-button::before{
+  content: "| |";
+  color: white;
+}
+
+/* 동영상 */
+.video-content iframe{
+  margin: 0 auto;
 }
 /* 푸터 */
 .site-footer{
