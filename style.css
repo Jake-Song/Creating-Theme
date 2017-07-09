@@ -9,7 +9,13 @@ Version: 1.0.0
 /* 폰트 */
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-js.css);
-
+@font-face {
+  font-family: 'custom';
+  src: url( 'fontello.eot' );
+  src: url( 'fontello.ttf' ),
+       url( 'fontello.woff' ),
+       url( 'fontello..woff2' );
+}
 /* Clearfix */
 .clearfix::before, .clearfix::after{
   content: "";
@@ -177,6 +183,69 @@ article.post:last-of-type{
 .pause-button::before{
   content: "| |";
   color: white;
+}
+
+/* 포트폴리오 */
+.portfolio-outter-box{
+  position: relative;
+  height: 100px;
+}
+.portfolio-outter-box::before{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 210px;
+  height: 210px;
+  transform: translate(-50%,-50%) rotate(45deg);
+  background: white;
+}
+.portfolio-box::before {
+  content: "";
+  width: 200px;
+  height: 200px;
+  display: block;
+  position: absolute;
+  border: 1px solid #333;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: white;
+}
+.portfolio-box::after{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  border: 1px solid #333;
+  width: 190px;
+  height: 190px;
+  transform: translate(-50%,-50%) rotate(45deg);
+  background: #172451;
+}
+.portfolio-box h2{
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: white;
+  margin: 0;
+  border: 1px solid white;
+  border-right: transparent;
+  border-left: transparent;
+  padding: 10px 0;
+}
+.portfolio-box h5{
+  position: absolute;
+  z-index: 3;
+  top: 84%;
+  left: 50%;
+  color: white;
+  height: 100px;
+  transform: translateX(-50%);
 }
 
 /* 동영상 */
