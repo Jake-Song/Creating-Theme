@@ -1,22 +1,35 @@
 <?php get_header( 'home' ); ?>
 
-      <div class="portfolio-outter-box">
-        <div class="portfolio-box">
-          <h2>포트폴리오</h2>
-          <h5>사이트 모음</h5>
+    <article class="video clearfix">
+      <div class="title-box">
+        <h4>동영상 강좌</h4>
+        <div class="main-title">
+          <?php echo file_get_contents( "./wp-content/themes/my-theme/img/stick.svg" ); ?>
+          <h2>워드프레스 강좌</h2>
+        </div>
+        <p>워드프레스에 대한 영상과 설명이 있습니다.</p>
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <div class="left">
+          <?php echo file_get_contents( "./wp-content/themes/my-theme/img/laptop-icon.svg" ); ?>
         </div>
       </div>
-    <article class="portfolio">
+      <div class="col-sm-12 col-md-6">
+
+      </div>
+    </article>
+
+    <article class="portfolio clearfix">
 
         <?php for( $i =0; $i < 6; $i++ ) :?>
 
         <div class="col-sm-6 col-md-4">
           <div class="thumbnail">
-            <img src="..." alt="...">
+            <img src="http://localhost/wordpress10/wp-content/uploads/2017/07/portfolio-on.jpg" alt="...">
             <div class="caption">
-              <h3>Thumbnail label</h3>
-              <p>...</p>
-              <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+              <h3>노무법인 온</h3>
+              <p>www.onthehr.com</p>
+              <p><a href="#" class="btn btn-primary" role="button">사이트 보기</a> <a href="#" class="btn btn-default" role="button">프로젝트 설명</a></p>
             </div>
           </div>
         </div>
@@ -25,14 +38,6 @@
 
     </article>
 
-    <div class="video">
-      <h2 class="text-center">동영상</h2>
-      <div class="col-sm-12 col-md-12">
-        <div class="video-content">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/1KV5kUkfdOM" frameborder="0" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-    <div class="contact"></div>
+    <article class="contact"></article>
 
 <?php get_footer(); ?>

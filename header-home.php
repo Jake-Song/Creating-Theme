@@ -40,7 +40,7 @@
 
                 </nav>
                 <div class="main-image">
-                    <img src="./wp-content/uploads/2017/07/main-image-adjust-2.jpg" alt="">
+                    <img src="./wp-content/themes/my-theme/img/main-image-4-adjust.jpg" alt="">
 
                         <div class="typewrite title" data-period="2000" data-type='[ "Design.", "Development.", "Wordpress." ]'>
                             <div class="bracket-left"></div>
@@ -51,6 +51,6 @@
                             <div class="play-button"><div class="arrow-right"></div></div>
                             <div class="pause-button"></div>
                         </div>
-                            
                 </div>
+                <div class="separator"></div>
           </header>

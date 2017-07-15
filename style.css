@@ -9,13 +9,7 @@ Version: 1.0.0
 /* 폰트 */
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-js.css);
-@font-face {
-  font-family: 'custom';
-  src: url( 'fontello.eot' );
-  src: url( 'fontello.ttf' ),
-       url( 'fontello.woff' ),
-       url( 'fontello..woff2' );
-}
+
 /* Clearfix */
 .clearfix::before, .clearfix::after{
   content: "";
@@ -69,21 +63,16 @@ article.post:last-of-type{
   border-bottom: 0;
 }
 
-/* 헤더 */
-.site-header img{
-  width: 100%;
-  height: auto;
-}
-
 /* 헤더 메뉴 */
 .site-header{
   position: relative;
+  height: 100vh;
 }
 .site-header nav{
     position: absolute;
     top: 5%;
     width: 100%;
-    background-color: rgba(255,255,255,0.01);
+    background-color: transparent;
     padding-left: 25px;
     border: 0;
     z-index: 1;
@@ -139,9 +128,18 @@ article.post:last-of-type{
 }
 
 /* 메인 이미지 타이틀 */
-.site-header .main-image{
-  height: 500px;
-  overflow: hidden;
+.site-header .main-image img{
+  width: 100%;
+  height: 95vh;
+}
+.site-header .main-image::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0000004d;
 }
 .site-header .main-image .typewrite.title{
   position: absolute;
@@ -184,74 +182,44 @@ article.post:last-of-type{
   content: "| |";
   color: white;
 }
-
-/* 포트폴리오 */
-.portfolio-outter-box{
-  position: relative;
-  height: 100px;
-}
-.portfolio-outter-box::before{
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 210px;
-  height: 210px;
-  transform: translate(-50%,-50%) rotate(45deg);
-  background: white;
-}
-.portfolio-box::before {
-  content: "";
-  width: 200px;
-  height: 200px;
-  display: block;
-  position: absolute;
-  border: 1px solid #333;
-  z-index: 1;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
-  background: white;
-}
-.portfolio-box::after{
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 2;
-  border: 1px solid #333;
-  width: 190px;
-  height: 190px;
-  transform: translate(-50%,-50%) rotate(45deg);
-  background: #172451;
-}
-.portfolio-box h2{
-  position: absolute;
-  z-index: 3;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  color: white;
-  margin: 0;
-  border: 1px solid white;
-  border-right: transparent;
-  border-left: transparent;
-  padding: 10px 0;
-}
-.portfolio-box h5{
-  position: absolute;
-  z-index: 3;
-  top: 84%;
-  left: 50%;
-  color: white;
-  height: 100px;
-  transform: translateX(-50%);
+.site-header .separator{
+  height: 30px;
+  background-color: #FFBC00;
+  border-bottom: 5px solid #ADADAD;
 }
 
 /* 동영상 */
-.video-content iframe{
-  margin: 0 auto;
+article.video{
+  display: flex;
+  flex-direction: column;
+  margin-top: 7%;
 }
+.title-box{
+  align-self: center;
+}
+.title-box h4{
+  color: #333;
+  margin: 0;
+}
+.title-box h2{
+  margin: 15px 0 5px;
+  font-weight: bold;
+}
+.title-box p{
+  color: #7e7e7e;
+}
+.title-box .main-title{
+  position: relative;
+}
+.title-box .main-title svg{
+  position: absolute;
+  top: 15px;
+  left: -60px;
+}
+/* 포트폴리오 */
+
+
+
 /* 푸터 */
 .site-footer{
   margin-top: 30px;
