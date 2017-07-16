@@ -197,16 +197,16 @@ article.video{
 .title-box{
   align-self: center;
 }
-.title-box h4{
+.title-box h4, .text-box h4{
   color: #333;
   margin: 0;
 }
-.title-box h2{
-  margin: 15px 0;
+.title-box h2, .text-box h2{
+  margin: 10px 0;
   font-weight: bold;
   line-height: 1.2;
 }
-.title-box p{
+.title-box p, .text-box p{
   color: #7e7e7e;
 }
 .title-box .main-title{
@@ -218,25 +218,53 @@ article.video{
   top: 15px;
   left: -60px;
 }
-.video.row .left{
-  padding-top: 5%;
-  text-align: right;
+.text-box p{
+  margin-bottom: 30px;
+}
+.video.row .left, .video.row .right{
+  position: relative;
+  height: 370px;
+  overflow: hidden;
+}
+.video.row .left img.current{
+  position:absolute;
+  top: 16%;
+  left: 15%;
+  opacity: 1;
+  transition: 1s;
+  transition-timing-function: cubic-bezier(.165,.84,.44,1);
+  transition-delay: 1s;
+}
+.video.row .left img{
+  position: absolute;
+  top: 16%;
+  left: 105%;
+  opacity: 1;
+  transition: 1s;
+  transition-timing-function: cubic-bezier(.165,.84,.44,1);
 }
 .video.row .left img{
   width: 85%;
 }
-.video.row .right{
-  padding-top: 5%;
+.video.row .right .text-box{
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  opacity: 1;
+  transition: 1s;
+  transition-timing-function: cubic-bezier(.165,.84,.44,1);
+  transition-delay: 1s;
 }
-.video.row .right .title-box{
-  margin-bottom: 35px;
+.video.row .right .text-box a.video-link{
+  height: 1em;
+  overflow: hidden;
 }
-.video.row .right a{
-  color: #7e7e7e;
+.video.row .right .text-box a.video-link span{
+  position: relative;
+  top: 0;
   border: 1px solid #adadad;
-  border-radius: 3px;
-  margin-bottom: 35px;
   padding: 5px 15px;
+  border-radius: 3px;
 }
 .selector{
   text-align: center;
