@@ -23,25 +23,53 @@ jQuery( document ).ready( function($){
     });
 
     // video selector
-    var leftBox = document.querySelector('.left');
-    var rightBox = document.querySelector('.right');
+    var images = document.querySelectorAll('.image-section img');
+    var texts = document.querySelectorAll('.text-section .text');
     var button = document.querySelectorAll('.selector button');
+    var amount = images.length;
+    var currentImage = images[0];
+    var currentText = texts[0];
+
+    function navigate( counter ){
+      currentImage.classList.remove('current');
+      currentText.classList.remove('current');
+
+      currentImage = images[counter];
+      currentText = texts[counter];
+
+      currentImage.classList.add('current');
+      currentText.classList.add('current');
+    }
+
     var firstBtn = button[0];
     var secondBtn = button[1];
-    var imgItem = leftBox.querySelectorAll('img');
-    var textItem = rightBox.querySelectorAll('.text-box');
+    var thirdBtn = button[2];
 
     firstBtn.addEventListener( 'click', function(e){
-      imgItem[1].classList.remove('current');
-      textItem[1].classList.remove('current');
-      imgItem[0].classList.add('current');
-      textItem[0].classList.add('current');
-    } );
-
+      navigate(0);
+    });
     secondBtn.addEventListener( 'click', function(e){
-      imgItem[0].classList.remove('current');
-      textItem[0].classList.remove('current');
-      imgItem[1].classList.add('current');
-      textItem[1].classList.add('current');
-    } );
+      navigate(1);
+    });
+    thirdBtn.addEventListener( 'click', function(e){
+      navigate(2);
+    });
+    navigate(0);
+
+    // Modal
+    var modal = document.getElementsByClassName('modal')[0];
+    var btn = document.getElementsByClassName('modal-button')[0];
+    var span = document.getElementsByClassName('close')[0];
+
+    btn.onclick = function(){
+      modal.classList.add('modal-open');
+    }
+    span.onclick = function(){
+      modal.classList.remove('modal-open');
+    }
+    window.onclick = function(event){
+      if( event.target == modal ){
+        modal.style.display = "none";
+      }
+    }
 });

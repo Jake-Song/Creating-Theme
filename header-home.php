@@ -41,11 +41,16 @@
                 </nav>
                 <div class="main-image">
                     <img src="./wp-content/themes/my-theme/img/main-image-4-adjust.jpg" alt="">
-
+                        <div class="left-bracket">
+                            <img src="./wp-content/themes/my-theme/img/left-bracket.svg" alt="">
+                        </div>
                         <div class="typewrite title" data-period="2000" data-type='[ "Design.", "Development.", "Wordpress." ]'>
                             <div class="bracket-left"></div>
                             <span class="wrap"></span>
                             <div class="bracket-right"></div>
+                        </div>
+                        <div class="right-bracket">
+                            <img src="./wp-content/themes/my-theme/img/right-bracket.svg" alt="">
                         </div>
                         <div class="control">
                             <div class="play-button"><div class="arrow-right"></div></div>
