@@ -57,18 +57,28 @@ jQuery( document ).ready( function($){
     navigate(0);
 
     // Modal
-    var dialog = document.getElementsByClassName('dialog')[0];
-    var dialogOveray = document.getElementsByClassName('dialog-overay')[0];
-    var btn = document.getElementsByClassName('dialog-button')[0];
-    var close = document.getElementsByClassName('close-button')[0];
+    var dialog = document.getElementsByClassName('dialog');
+    var dialogOveray = document.getElementsByClassName('dialog-overay');
+    var btn = document.getElementsByClassName('dialog-button');
+    var close = document.getElementsByClassName('close-button');
 
-    btn.onclick = function(){
-      dialog.classList.add('dialog-open');
+    for( var i = 0; i < dialog.length; i++ ){
+        btn[i].onclick = function( index ){
+          return function(){
+            dialog[index].classList.add('dialog-open');
+          }
+        }(i);
+        close[i].onclick = function( index ){
+          return function(){
+            dialog[index].classList.remove('dialog-open');
+          }
+        }(i);
+        dialogOveray[i].onclick = function( index ){
+          return function(){
+            dialog[index].classList.remove('dialog-open');
+          }
+        }(i);
     }
-    close.onclick = function(){
-      dialog.classList.remove('dialog-open');
-    }
-    dialogOveray.onclick = function(event){
-      dialog.classList.remove('dialog-open');
-    }
+
+
 });
