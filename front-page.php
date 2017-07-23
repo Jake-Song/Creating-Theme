@@ -176,7 +176,7 @@
                             </div>
                             <div class="dialog-body">
                                 <div class="dialog-slide">
-                                    <img src="./wp-content/uploads/2017/07/portfolio-on.jpg" alt="">
+                                    <img src="./wp-content/uploads/2017/07/portfolio-on-1.jpg" alt="">
                                     <div class="dialog-link-container">
 
                                           <span class="dialog-left-arrow">
