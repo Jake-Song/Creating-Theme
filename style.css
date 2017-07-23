@@ -423,6 +423,7 @@ article.portfolio{
   padding: 0 50px;
 }
 .portfolio-title-container{
+  position: relative;
   display: flex;
   margin-top: -100px;
   margin-bottom: 30px;
@@ -434,6 +435,11 @@ article.portfolio{
 article.portfolio .title-box{
   margin-left: 125px;
   margin-right: 130px;
+}
+article.portfolio .title-box .portfolio-backface{
+  position: absolute;
+  top: 30%;
+  left: 20%;
 }
 article.portfolio .title-box .main-title{
   margin-bottom: 15%;
@@ -461,120 +467,169 @@ article.portfolio .thumbnail button{
   vertical-align: middle;
   border-radius: 4px;
 }
-article.portfolio .modal{
+.dialog{
   position: fixed;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
   pointer-events: none;
+  z-index: 1;
 }
-article.portfolio .modal, article.portfolio .modal-overay{
+.dialog, .dialog-overay{
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 }
-.modal-overay{
+.dialog-overay{
   position: absolute;
   z-index: 1;
   opacity: 0;
   background: rgba(55, 58, 71, 0.9);
-  -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-.modal-open .modal-overay{
+.dialog-content{
+  position: relative;
+  width: 80%;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  z-index: 2;
+  opacity: 0;
+}
+.dialog-open .dialog-overay{
   opacity: 1;
   pointer-events: auto;
-  -webkit-transition-duration: 0.8s;
   transition-duration: 0.8s;
 }
-.modal-open .modal-content{
+.dialog-close .dialog-overay{
+  transition-duration: 0.5s;
+}
+.dialog-open .dialog-content{
   opacity: 1;
+  pointer-events: auto;
 }
-.modal-content{
-  position: relative;
-  top: 30px;
-  overflow: auto;
-  background-color: #fefefe;
-  margin: auto;
-  padding: 0;
-  border: 1px solid #888;
-  width: 80vw;
-  height: 90vh;
+.dialog-content .morph-shape{
+  position: absolute;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  top: -3px;
+  left: -4px;
+  z-index: -1;
+}
+.morph-shape svg rect{
+  stroke: #fff;
+  stroke-width: 2px;
+  stroke-dasharray: 1680;
+}
+.dialog-open .morph-shape svg rect{
+  -webkit-animation: anim-dash 0.6s forwards;
+  animation: anim-dash 0.6s forwards;
+}
+@keyframes anim-dash {
+  0% {
+    stroke-dashoffset: 1680;
+  }
+  100% {
+      stroke-dashoffset: 0;
+  }
+}
+.dialog-inner{
   opacity: 0;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-  -webkit-animation-name: animatetop;
-  -webkit-animation-duration: 0.4s;
-  animation-name: animatetop;
-  animation-duration: 0.4s;
+  background: #fff;
+  width: 100%;
+  height: 100%;
 }
-.close{
-  color: #aaa;
+.dialog-open .dialog-inner{
+  opacity: 1;
+  padding: 3em;
+  -webkit-transition: opacity 0.85s 0.35s;
+  transition: opacity 0.85s 0.35s;
+}
+.dialog-open .dialog-slide{
+  animation: anim-elem-1 0.7s ease-out both;
+  webkit-animation: anim-elem-1 0.7s ease-out both;
+}
+@keyframes anim-elem-1 {
+  0%{
+    opacity: 0;
+    transform: translate3d( -150px, 0, 0);
+  }
+  100%{
+    opacity: 1;
+    transform: translate3d( 0, 0, 0 );
+  }
+}
+.dialog-open .dialog-text{
+  animation: anim-elem-2 0.7s ease-out both;
+  webkit-animation: anim-elem-2 0.7s ease-out both;
+}
+@keyframes anim-elem-2 {
+  0%{
+    opacity: 0;
+    transform: translate3d(150px,0,0);
+  }
+  100%{
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+.dialog-header{
+  margin-bottom: 2em;
+}
+.dialog-header .close-button{
   float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-.close:hover, .close:focus{
-  color: black;
-  text-decoration: none;
   cursor: pointer;
 }
-.modal-header{
-  padding: 25px 50px 25px;
-  border-bottom: 0;
-}
-.modal-body{
+.dialog-content .dialog-body{
   display: flex;
   flex-wrap: wrap;
-  padding: 0 50px;
 }
-.modal-body .modal-slide{
+.dialog-content .dialog-body .dialog-slide{
   flex-basis: 70%;
 }
-.modal-body .modal-slide img{
+.dialog-slide img{
   width: 100%;
 }
-.modal-body .modal-text{
-  flex-basis: 30%;
-  padding-left: 50px;
-}
-.modal-body .modal-text .modal-title{
-  padding-bottom: 25px;
-  border-bottom: 1px solid #adadad;
-  margin-bottom: 25px;
-}
-.modal-body .modal-text .modal-title h2{
-  margin-bottom: 20px;
-}
-.modal-body .modal-text .modal-title h4{
-  margin-bottom: 5px;
-}
-.modal-body .modal-text .modal-title h4:last-of-type{
-  margin-top: 0;
-}
-.modal-body .modal-link-container{
-  flex-basis: 70%;
+.dialog-link-container{
   text-align: center;
-  margin-top: 30px;
+  margin-top: 2em;
 }
-.modal-center-text{
+.dialog-center-text{
   padding: 0 75px;
 }
-.modal-link{
-  margin-top: 30px;
+.dialog-link{
+  margin-top: 2em;
 }
-.modal-link a{
+.dialog-link a{
+  padding: 10px 50px;
   color: #333;
-  padding: 5px 30px;
   border: 1px solid #adadad;
 }
-@-webkit-keyframes animatetop {
-    from { -webkit-transform: scale(0) }
-    to { -webkit-transform: scale(1) }
+.dialog-left-arrow img, .dialog-right-arrow img{
+  width: 30px;
 }
-
-@keyframes animatetop {
-    from {transform: scale(0)}
-    to {transform: scale(1)}
+.dialog-content .dialog-body .dialog-text{
+  flex-basis: 30%;
+  padding-left: 3em;
+}
+.dialog-title{
+  padding-bottom: 2em;
+  margin-bottom: 2em;
+  border-bottom: 1px solid #adadad;
+}
+.dialog-title h2{
+  margin-bottom: 1em;
+}
+.dialog-title h4{
+  margin: 0;
+}
+.dialog-title h4:last-of-type{
+  margin-top: 5px;
 }
 
 /* 푸터 */

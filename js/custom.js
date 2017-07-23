@@ -57,19 +57,18 @@ jQuery( document ).ready( function($){
     navigate(0);
 
     // Modal
-    var modal = document.getElementsByClassName('modal')[0];
-    var btn = document.getElementsByClassName('modal-button')[0];
-    var span = document.getElementsByClassName('close')[0];
+    var dialog = document.getElementsByClassName('dialog')[0];
+    var dialogOveray = document.getElementsByClassName('dialog-overay')[0];
+    var btn = document.getElementsByClassName('dialog-button')[0];
+    var close = document.getElementsByClassName('close-button')[0];
 
     btn.onclick = function(){
-      modal.classList.add('modal-open');
+      dialog.classList.add('dialog-open');
     }
-    span.onclick = function(){
-      modal.classList.remove('modal-open');
+    close.onclick = function(){
+      dialog.classList.remove('dialog-open');
     }
-    window.onclick = function(event){
-      if( event.target == modal ){
-        modal.style.display = "none";
-      }
+    dialogOveray.onclick = function(event){
+      dialog.classList.remove('dialog-open');
     }
 });
