@@ -44,6 +44,7 @@ jQuery( document ).ready( function($){
     var firstBtn = button[0];
     var secondBtn = button[1];
     var thirdBtn = button[2];
+    var fourthBtn = button[3];
 
     firstBtn.addEventListener( 'click', function(e){
       navigate(0);
@@ -53,6 +54,9 @@ jQuery( document ).ready( function($){
     });
     thirdBtn.addEventListener( 'click', function(e){
       navigate(2);
+    });
+    fourthBtn.addEventListener( 'click', function(e){
+      navigate(3);
     });
     navigate(0);
 
@@ -66,6 +70,7 @@ jQuery( document ).ready( function($){
         btn[i].onclick = function( index ){
           return function(){
             dialog[index].classList.add('dialog-open');
+            carousel();
           }
         }(i);
         close[i].onclick = function( index ){
@@ -80,5 +85,37 @@ jQuery( document ).ready( function($){
         }(i);
     }
 
+// Portfolio Carousel
+var carousel = (function(){
+    var dialogOpened = document.querySelector('.dialog-open');
+    var slideBox = dialogOpened.querySelector('.dialog-slide');
+    var leftArrow = dialogOpened.querySelector('.dialog-left-arrow');
+    var rightArrow = dialogOpened.querySelector('.dialog-right-arrow');
+    var items = slideBox.querySelectorAll('img');
+
+    var counter = 0;
+    var imagesAmount = items.length;
+    var current = items[0];
+
+    function slideNavigate( direction ){
+        current.classList.remove('show');
+        counter = counter + direction;
+        if( direction === -1 && counter < 0 ){
+          counter = imagesAmount - 1;
+        }
+        if( direction === 1 && !items[counter] ){
+          counter = 0;
+        }
+        current = items[counter];
+        current.classList.add('show');
+    }
+    leftArrow.addEventListener( 'click', function(e){
+      slideNavigate(-1);
+    });
+    rightArrow.addEventListener( 'click', function(e){
+      slideNavigate(1);
+    });
+    slideNavigate(0);
+})
 
 });

@@ -1,5 +1,5 @@
 <div class="thumbnail">
-    <img src="./wp-content/uploads/2017/07/portfolio-on.jpg" alt="...">
+    <img class="thumbnail-image" src="./wp-content/uploads/2017/07/portfolio-on.jpg" alt="...">
     <div class="caption">
       <h3>노무법인 온</h3>
       <p>www.onthehr.com</p>

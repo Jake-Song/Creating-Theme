@@ -1,8 +1,8 @@
 <div class="thumbnail">
-    <img src="./wp-content/uploads/2017/07/portfolio-stepi.jpg" alt="...">
+    <img class="thumbnail-image" src="./wp-content/uploads/2017/07/portfolio-stepi.jpg" alt="...">
     <div class="caption">
-      <h3>노무법인 온</h3>
-      <p>www.onthehr.com</p>
+      <h3>StepiZin</h3>
+      <p>www.stepi.cafe24.com</p>
       <p>
           <a href="#" class="btn btn-primary" role="button">사이트 보기</a>
           <button type="button" class="dialog-button">프로젝트 보기</button>

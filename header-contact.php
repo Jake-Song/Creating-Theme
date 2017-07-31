@@ -9,7 +9,7 @@
     <body <?php body_class(); ?>>
 
         <div class="container">
-            <header class="site-header page">
+            <header class="site-header contact">
 
                 <nav class="navbar navbar-default">
 
@@ -40,7 +40,7 @@
 
                 </nav>
                 <div class="header-title">
-                    동영상 강좌
+                    문의하기
                 </div>
                 <div class="separator"></div>
             </header>

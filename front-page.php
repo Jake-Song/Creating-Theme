@@ -15,9 +15,10 @@
       <div class="video-container">
 
           <div class="image-section">
-            <img class="current" src="./wp-content/themes/my-theme/img/laptop-com.svg" alt="">
-            <img class="" src="./wp-content/themes/my-theme/img/laptop-com.svg" alt="">
-            <img class="" src="./wp-content/themes/my-theme/img/laptop-com.svg" alt="">
+            <img class="current" src="./wp-content/themes/my-theme/img/video-tutorial.svg" alt="">
+            <img class="" src="./wp-content/themes/my-theme/img/video-tutorial-2.svg" alt="">
+            <img class="" src="./wp-content/themes/my-theme/img/video-tutorial-3.svg" alt="">
+            <img class="" src="./wp-content/themes/my-theme/img/video-tutorial-4.svg" alt="">
           </div>
 
           <div class="text-section">
@@ -51,16 +52,18 @@
                       <span class="a wrap">워드프레스 강좌</span>
                   </h4>
                   <h2 class="a main-title">
-                      <span class="a wrap">워드프레스 홈페이지 1시간안에 만들기</span>
+                      <span class="a wrap">
+                        왕초보도 하루만에 가능한 워드프레스<br>
+                        홈페이지 만들기
+                      </span>
                   </h2>
                   <p class="a description">
                     <span class="a wrap">
                       난이도   <span class="p-separator">|</span>   초급<br>
-                      영상개수   <span class="p-separator">|</span>   1개<br>
-                      영상시간   <span class="p-separator">|</span>   1:20<br>
+                      영상개수   <span class="p-separator">|</span>   9개<br>
+                      영상시간   <span class="p-separator">|</span>   1:35<br>
                       워드프레스 초보자분들도 무리없이 따라하시며<br>
                       만들 수 있습니다.<br>
-                      홈페이지를 같이 만들어가며 배우는 영상입니다.
                     </span>
                   </p>
                   <p class="a video-link-button">
@@ -75,16 +78,39 @@
                       <span class="a wrap">워드프레스 강좌</span>
                   </h4>
                   <h2 class="a main-title">
-                      <span class="a wrap">워드프레스 홈페이지 1시간안에 만들기</span>
+                      <span class="a wrap">한국형 워드프레스 쇼핑몰 만들기</span>
                   </h2>
                   <p class="a description">
                     <span class="a wrap">
                       난이도   <span class="p-separator">|</span>   초급<br>
-                      영상개수   <span class="p-separator">|</span>   1개<br>
-                      영상시간   <span class="p-separator">|</span>   1:20<br>
+                      영상개수   <span class="p-separator">|</span>   9개<br>
+                      영상시간   <span class="p-separator">|</span>   1:35<br>
                       워드프레스 초보자분들도 무리없이 따라하시며<br>
                       만들 수 있습니다.<br>
-                      홈페이지를 같이 만들어가며 배우는 영상입니다.
+                      쇼핑몰을 만들어가며 배우는 과정입니다.
+                    </span>
+                  </p>
+                  <p class="a video-link-button">
+                    <span class="a wrap">
+                      <a class="video-link" href="#">강좌 보기</a>
+                    </span>
+                  </p>
+              </div>
+
+              <div class="text">
+                  <h4 class="a sub-title">
+                      <span class="a wrap">워드프레스 강좌</span>
+                  </h4>
+                  <h2 class="a main-title">
+                      <span class="a wrap">워드프레스 자유자재로 다루기</span>
+                  </h2>
+                  <p class="a description">
+                    <span class="a wrap">
+                      난이도   <span class="p-separator">|</span>   중급<br>
+                      영상개수   <span class="p-separator">|</span>   10개<br>
+                      영상시간   <span class="p-separator">|</span>   1:35<br>
+                      기본적인 html, css 지식이 필요합니다.<br>
+                      테마를 만들어가며 배우는 과정입니다.
                     </span>
                   </p>
                   <p class="a video-link-button">
@@ -99,31 +125,31 @@
       </div>
 
           <div class="selector col-sm-12 col-md-12 col-lg-12">
-              <?php for( $i =0; $i < 3; $i++ ) :?>
+              <?php for( $i =0; $i < 4; $i++ ) :?>
                   <button type="button" class="video-button"></button>
               <?php endfor; ?>
           </div>
 
       </article>
 
-      <article class="price clearfix">
+      <article class="service clearfix">
         <div class="title-box">
-          <h4>가격 정책</h4>
+          <h4>서비스 안내</h4>
           <div class="main-title">
             <img src="./wp-content/themes/my-theme/img/left-edge.svg" alt="">
-            <h2>사이트 제작 비용</h2>
+            <h2>서비스 상품</h2>
             <img src="./wp-content/themes/my-theme/img/right-edge.svg" alt="">
           </div>
-          <p>사이트 제작 의뢰시 비용 안내입니다.</p>
+          <p>사이트 제작 의뢰시 참고하세요.</p>
         </div>
 
         <div class="price-container">
 
-                <?php for($i = 0; $i < 3; $i++) : ?>
+              <?php for($i = 0; $i < 3; $i++) : ?>
 
-                        <?php get_template_part('/content/price', $i + 1); ?>
+                      <?php get_template_part('/content/price', $i + 1); ?>
 
-                <?php endfor; ?>
+              <?php endfor; ?>
          </div>
 
       </article>
@@ -151,7 +177,7 @@
                   <img src="./wp-content/themes/my-theme/img/portfolio-responsive.svg" alt="">
               </div>
           </div>
-            <?php for($i = 0; $i < 6; $i++) : ?>
+            <?php for($i = 0; $i < 5; $i++) : ?>
                 <div class="col-sm-6 col-md-4">
                     <?php get_template_part('/content/thumbnail', $i + 1); ?>
                 </div>

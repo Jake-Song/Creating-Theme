@@ -12,7 +12,7 @@
             <div class="dialog-body">
                 <div class="dialog-slide">
                     <img src="./wp-content/uploads/2017/07/portfolio-on.jpg" alt="">
-                    <div class="dialog-link-container">
+                    <div class="dialog-arrow-container">
 
                           <span class="dialog-left-arrow">
                               <img src="./wp-content/themes/my-theme/img/left-arrow.svg" alt="">
@@ -21,9 +21,7 @@
                           <span class="dialog-right-arrow">
                                 <img src="./wp-content/themes/my-theme/img/right-arrow.svg" alt="">
                           </span>
-                          <div class="dialog-link">
-                              <a href="#" target="_blank">사이트 보기</a>
-                          </div>
+
                     </div>
                 </div>
                 <div class="dialog-text">
@@ -39,6 +37,9 @@
                           - 원페이지 화면전환 효과 설계<br>
                           - 반응형 디자인
                         </p>
+                    </div>
+                    <div class="dialog-link">
+                        <a href="#" target="_blank">사이트 보기</a>
                     </div>
                 </div>
             </div>
