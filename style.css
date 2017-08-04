@@ -193,6 +193,9 @@ article.post:last-of-type{
   content: "| |";
   color: white;
 }
+.main-image{
+  position: relative;
+}
 .site-header .separator{
   height: 30px;
   background-color: #FFBC00;
@@ -713,6 +716,10 @@ article.page{
   margin-top: 30px;
   padding: 0;
 }
+.ajax-container{
+  flex-basis: 70%;
+  padding: 30px 30px;
+}
 .page-wrapper{
   width: 30%;
 }
@@ -747,23 +754,25 @@ article.page aside .side-menu{
 .side-menu-title h2{
   display: inline-block;
 }
-.sub-index ol{
+.sub-nav ol{
   padding: 0;
 }
-.sub-index ol li{
+.sub-nav ol li{
   list-style: none;
 }
-.sub-index ol li a{
+.sub-nav ol li a{
   position: relative;
   color: white;
   display: block;
   padding: 10px 0 10px 15px;
 }
-.sub-index ol li a:hover, .sub-index ol li.current_page_item a{
+.sub-nav ol li a:hover,
+.sub-nav ol li.current_page_item a,
+.sub-nav ol li a.current{
   background: #FFBC00;
   color: #333;
 }
-.sub-index ol li a .glyphicon-triangle-right{
+.sub-nav ol li a .glyphicon-triangle-right{
   position: absolute;
   top: 50%;
   right: 0;
@@ -772,18 +781,13 @@ article.page aside .side-menu{
   opacity: 0;
   font-size: 1.2rem;
 }
-.sub-index ol li a:hover .glyphicon-triangle-right,
-.sub-index ol li.current_page_item a .glyphicon-triangle-right{
+.sub-nav ol li a:hover .glyphicon-triangle-right,
+.sub-nav ol li.current_page_item a .glyphicon-triangle-right,
+.sub-nav ol li a.current .glyphicon-triangle-right{
   opacity: 1;
-}
-article.page .content-box{
-  flex-basis: 70%;
 }
 article.page h2{
   font-size: 2rem;
-}
-.content-box{
-  padding: 30px 30px;
 }
 .content-box-title{
   text-align: center;
@@ -802,9 +806,161 @@ article.page h2{
 }
 .content-video-tutorial p.title{
   padding-left: 15px;
+  text-align: left;
 }
 .content-video-tutorial p.content{
   padding-left: 30px;
+}
+
+/* 페이지 전환 Ajax */
+.content-box::after, .content-box::before {
+  /* these are the 2 half blocks which cover the content once the animation is triggered */
+  content: '';
+  height: 50%;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  background-color: #ffffff;
+  z-index: 1;
+  /* Force Hardware Acceleration */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transition: -webkit-transform 0.4s 0.4s;
+  -moz-transition: -moz-transform 0.4s 0.4s;
+  transition: transform 0.4s 0.4s;
+}
+body::before {
+  top: 0;
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+body::after {
+  bottom: 0;
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  -o-transform: translateY(100%);
+  transform: translateY(100%);
+}
+body.page-is-changing::after, body.page-is-changing::before {
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-transition: -webkit-transform 0.4s 0s;
+  -moz-transition: -moz-transform 0.4s 0s;
+  transition: transform 0.4s 0s;
+}
+.cover-layer{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  height: calc(100% - 20px);
+  width: calc(100% - 20px);
+  opacity: 0;
+  visibility: hidden;
+  background-color: #4089a6;
+  -webkit-transition: opacity 0.4s 0.4s, visibility 0s 0.8s;
+  -moz-transition: opacity 0.4s 0.4s, visibility 0s 0.8s;
+  transition: opacity 0.4s 0.4s, visibility 0s 0.8s;
+}
+.page-is-changing .cover-layer {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: opacity 0.3s 0s, visibility 0s 0s;
+  -moz-transition: opacity 0.3s 0s, visibility 0s 0s;
+  transition: opacity 0.3s 0s, visibility 0s 0s;
+}
+.loading-bar{
+  position: fixed;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  height: 2px;
+  width: 90%;
+  background-color: #4089a6;
+  visibility: hidden;
+  -webkit-transition: visibility 0s 0.4s, -webkit-transform 0.4s 0s ease-in;
+  -moz-transition: visibility 0s 0.4s, -moz-transform 0.4s 0s ease-in;
+  transition: visibility 0s 0.4s, transform 0.4s 0s ease-in;
+  /* Force Hardware Acceleration */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+.loading-bar::before {
+  /* this is the progress bar inside the loading bar */
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #283040;
+  /* Force Hardware Acceleration */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transform: scaleX(0);
+  -moz-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  -o-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -ms-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+.page-is-changing .loading-bar {
+  visibility: visible;
+  -webkit-transform: translateX(-50%) translateY(-50%) scaleX(0.3);
+  -moz-transform: translateX(-50%) translateY(-50%) scaleX(0.3);
+  -ms-transform: translateX(-50%) translateY(-50%) scaleX(0.3);
+  -o-transform: translateX(-50%) translateY(-50%) scaleX(0.3);
+  transform: translateX(-50%) translateY(-50%) scaleX(0.3);
+  -webkit-transition: visibility 0s 0.3s, -webkit-transform 0.4s 0.4s;
+  -moz-transition: visibility 0s 0.3s, -moz-transform 0.4s 0.4s;
+  transition: visibility 0s 0.3s, transform 0.4s 0.4s;
+}
+.page-is-changing .loading-bar::before {
+  -webkit-transform: scaleX(1);
+  -moz-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  -o-transform: scaleX(1);
+  transform: scaleX(1);
+  -webkit-transition: -webkit-transform 0.8s 0.8s ease-in;
+  -moz-transition: -moz-transform 0.8s 0.8s ease-in;
+  transition: transform 0.8s 0.8s ease-in;
 }
 /* 댓글 */
 #comments {
@@ -861,20 +1017,11 @@ cite.fn{
 	margin-bottom: 1.5em;
 }
 
-.comment-metadata {
-	color: #767676;
-	font-size: 10px;
-	font-size: 0.625rem;
-	font-weight: 800;
-	letter-spacing: 0.1818em;
-	text-transform: uppercase;
+.commentmetadata a {
+	color: #7e7e7e;
 }
 
-.comment-metadata a {
-	color: #767676;
-}
-
-.comment-metadata a.comment-edit-link {
+.commentmetadata a.comment-edit-link {
 	color: #222;
 	margin-left: 1em;
 }
@@ -936,6 +1083,7 @@ cite.fn{
 }
 article.contact{
   justify-content: center;
+  background: #f7f7f7;
 }
 article.contact .content-box{
   display: flex;
@@ -963,11 +1111,53 @@ article.contact .content-box .content-box-title svg{
     color: green;
     border-radius: 3px;
 }
-.content-box form p:first-of-type{
-  text-align: left;
+#form-messages{
+  margin-bottom: 30px;
 }
-form span{
-    color: red;
+.info-field{
+  display: flex;
+}
+.field{
+  margin-bottom: 10px;
+  border: 1px solid #adadad;
+  background: white;
+}
+.field label{
+  padding: 20px 40px;
+  margin-bottom: 0;
+  border-right: 1px solid #adadad;
+  }
+.field label[for="message"]{
+  padding: 100px 40px;
+  vertical-align: top;
+}
+.field textarea{
+  width: 665px;
+  height: 170px;
+  margin: 25px;
+  resize: none;
+}
+.field input{
+  width: 250px;
+  margin: 0 24px;
+}
+.field select{
+  width: 150px;
+  margin-left: 25px;
+}
+.submit-field{
+  margin-top: 30px;
+  text-align: center;
+}
+.submit-field button{
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+.submit-field button .submit-button{
+  border: 1px solid #adadad;
+  padding: 10px 70px;
+  background: white;
 }
 
 /* 푸터 페이지 */

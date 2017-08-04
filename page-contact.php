@@ -26,19 +26,18 @@ Template Name: 연락하기
 
                           <form id="ajax-contact">
                             <?php wp_nonce_field( basename( __FILE__ ), 'user-submitted-question' ); ?>
-
-                            <div class="field">
-                                <label for="name">이름:</label>
-                                <input type="text" id="name" name="name" required>
+                            <div class="info-field">
+                                <div class="field">
+                                    <label for="name">이름</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="field">
+                                    <label for="email">이메일</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
                             </div>
-
                             <div class="field">
-                                <label for="email">이메일:</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-
-                            <div class="field">
-                                <label for="sort">구분:</label>
+                                <label for="sort">구분</label>
                                 <select name="sort" id="sort" required>
                                     <option value=""></option>
                                     <option value="question">동영상강좌</option>
@@ -47,14 +46,14 @@ Template Name: 연락하기
                             </div>
 
                             <div class="field">
-                                <label for="message">내용:</label>
+                                <label for="message">내용</label>
                                 <textarea id="message" name="message" required></textarea>
                             </div>
 
                             <input type="text" id="xyq" name="<?php echo apply_filters( 'honeypot_name', 'data-submitted' ) ?>" value="" style="display: none;">
 
-                            <div class="field">
-                                <button type="submit">보내기</button>
+                            <div class="submit-field">
+                                <button type="submit"><span class="submit-button">보내기</span></button>
                             </div>
 
                         <?php

@@ -19,19 +19,23 @@ function dev_enqueue_scripts(){
     wp_register_style( 'fontello', get_template_directory_uri() . '/css/fontello.css' );
     wp_register_script( 'typewriter', get_template_directory_uri() . '/js/typewriter.js' );
     wp_register_script( 'animatescroll', get_template_directory_uri() . '/js/animatescroll.min.js' );
+    wp_register_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.js' );
 
     wp_enqueue_style( 'style', get_stylesheet_uri(), array( 'fontello' ) );
     wp_enqueue_style( 'fontello' );
     wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/css/bootstrap.min.css' );
     wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), true );
+    wp_enqueue_script( 'modernizr' );
     wp_enqueue_script( 'typewriter' );
     if( is_home() ) :
         wp_enqueue_script( 'custom', get_template_directory_uri() . '/js/custom.js', array('jquery', 'typewriter') );
-      else :
-        wp_enqueue_script( 'page-script', get_template_directory_uri() . '/js/page.js', array('jquery', 'animatescroll') );
+        elseif( is_page_template( 'page-contact.php' ) ) :
+            wp_enqueue_script( 'contact', get_template_directory_uri() . '/js/contact-ajax.js', array('jquery') );
+        elseif( !is_home() && is_page() ) :
+            wp_enqueue_script( 'page-script', get_template_directory_uri() . '/js/page.js', array('jquery', 'animatescroll') );
     endif;
     // test
-    wp_localize_script( 'page-script', 'ajaxHandler', array(
+    wp_localize_script( 'contact', 'ajaxHandler', array(
       'adminAjax' => admin_url( 'admin-ajax.php' ),
       'security' => wp_create_nonce( 'user-submitted-question' ),
     ) );
@@ -215,11 +219,12 @@ function process_send_email(){
         if (wp_mail($recipient, $subject, $email_content, $email_headers)) {
             // Set a 200 (okay) response code.
             http_response_code(200);
-            echo "Thank You! Your message has been sent.";
+            wp_send_json_success("Thank You! Your message has been sent.");
         } else {
             // Set a 500 (internal server error) response code.
             http_response_code(500);
-            echo "Oops! Something went wrong and we couldn't send your message.";
+            wp_send_json_error("Oops! Something went wrong and we couldn't send your message.");
+
         }
 
     } else {

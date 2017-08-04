@@ -9,7 +9,7 @@
                             <nav class="site-nav sub-nav">
                                 <?php if( has_children() || $post->post_parent ) : ?>
                                   <span class="side-menu-title"><h2>차례</h2></span>
-                                  <div class="sub-index">
+                                  <div class="sub-index-child">
                                       <ol>
                                           <?php
                                               $args = array(
@@ -53,6 +53,9 @@
                         </div>
                     </aside>
                     </div>
+
+                    <div class="ajax-container">
+
                    <div class="content-box">
 
                         <?php qt_custom_breadcrumbs(); ?>
@@ -68,8 +71,12 @@
                               comments_template();
                             endif;
                         ?>
+                        <div class="cover-layer"></div>
+                        <div class="loading-bar"></div>
                     </div>
 
+
+                    </div>
                 </article>
       <?php
 

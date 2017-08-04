@@ -1,68 +1,134 @@
 jQuery( document ).ready( function($){
-    // sub-menu fixing
-    // var height = document.querySelector('.site-header.page').clientHeight + 25;
-    // var sideBox = document.querySelector('.sidebox');
-    //
-    // window.onscroll = function() { fixSidebox() };
-    //
-    // function fixSidebox() {
-    //     if ( window.scrollY > height ) {
-    //         sideBox.classList.add("fixed");
-    //     } else {
-    //         sideBox.classList.remove("fixed");
-    //     }
-    // }
+    //sub-menu fixing
+    var height = $('.site-header.page').height() + 25;
+    var sideBox = $('.sidebox');
 
-    // ajax Test
-    var form = $('#ajax-contact');
+    $(document).on("scroll", fixSidebox);
 
-    var formMessages = $('#form-messages');
+    function fixSidebox() {
+        var scrollPos = $(document).scrollTop();
+        if ( scrollPos > height ) {
+            sideBox.addClass("fixed");
+        } else {
+            sideBox.removeClass("fixed");
+        }
+    }
 
-    $(form).submit(function(e) {
+    $(document).on("scroll", onScrollSpy);
+
+   //smooth scroll
+   $('a[href^="."]').on('click', function(e){
+
         e.preventDefault();
+        // $(document).off("scroll");
 
-        var formData = {
-  				'name' : $( '#name').val(),
-  				'email' : $( '#email').val(),
-          'sort' : $( '#sort' ).val(),
-  				'message' : $( '#message').val()
-  			};
+        var target = this.hash.substr(1);
+        var name = $('#' + target);
 
-  			$.ajax({
-  				type: 'POST',
-  				dataType: 'json',
-  				url: ajaxHandler.adminAjax,
-  				data: {
-  					action: 'process_send_email',
-  					data: formData,
-            submission: $('#xyq').val(),
-  					security: ajaxHandler.security
-  				}
-        })
-  			.done(function(response) {
+        name.stop().animatescroll({
+            easing: 'easeInOutExpo',
+            onScrollStart: function(){
+               $(document).on("scroll", onScrollSpy);
+            },
+        });
+    });
 
-    			$(formMessages).removeClass('error');
-    			$(formMessages).addClass('success');
+  function onScrollSpy(event){
+    var scrollPos =  $(document).scrollTop();
+    if( $('a[href^="."]') ){
+    $('a[href^="."]').each(function(){
+        var currLink = $(this);
+        var refElement = $('#' + this.hash.substr(1));
 
-    			$(formMessages).text(response);
+        if(refElement.position().top <= scrollPos + 32 && refElement.position().top + refElement.height() > scrollPos){
 
-    			$('#name').val('');
-    			$('#email').val('');
-    			$('#message').val('');
-          $('#sort').val('');
-    		})
-    		.fail(function(data) {
-    			// Make sure that the formMessages div has the 'error' class.
-    			$(formMessages).removeClass('success');
-    			$(formMessages).addClass('error');
+          $('a[href^="."]').removeClass("current");
+          currLink.addClass("current");
+        } else {
+          currLink.removeClass("current");
+        }
+    });
+  }
+  }
 
-      		// Set the message text.
-    			if (data.responseText !== '') {
-    				$(formMessages).text(data.responseText);
-    			} else {
-    				$(formMessages).text('Oops! An error occured and your message could not be sent.');
-    			}
-    		});
+  // 페이지 전환 Ajax
+  var isAnimating = false,
+  newLocation = '';
+  firstLoad = false;
 
-      });
+  //trigger smooth transition from the actual page to the new one
+  $('.sub-index-child').on('click', 'ol li a', function(event){
+    event.preventDefault();
+    if( !$(this).parent().hasClass('current_page_item') ){
+      $('.sub-index-child li').removeClass('current_page_item');
+      $(this).parent().addClass('current_page_item');
+      //detect which page has been selected
+      var newPage = $(this).attr('href');
+      //if the page is not already being animated - trigger animation
+      if( !isAnimating ) changePage(newPage, true);
+      firstLoad = true;
+    }
+  });
+
+  $(window).on('popstate', function() {
+  	if( firstLoad ) {
+      /*
+      Safari emits a popstate event on page load - check if firstLoad is true before animating
+      if it's false - the page has just been loaded
+      */
+      var newPage = location.href;
+
+      if( !isAnimating  &&  newLocation != newPage ) changePage(newPage, false);
+    }
+    firstLoad = true;
+	});
+
+  function changePage(url, bool) {
+    isAnimating = true;
+    // trigger page animation
+    $('body').addClass('page-is-changing');
+    $('.loading-bar').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+    	loadNewContent(url, bool);
+      newLocation = url;
+      $('.loading-bar').off('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend');
+    });
+    //if browser doesn't support CSS transitions
+    if( !transitionsSupported() ) {
+      loadNewContent(url, bool);
+      newLocation = url;
+    }
+	}
+
+  function loadNewContent(url, bool) {
+
+    var section = $('<div class="content-box"></div>');
+
+  	section.load(url+' .content-box > *', function(event){
+      // load new content and replace <main> content with the new one
+      $('.ajax-container').html(section);
+      //if browser doesn't support CSS transitions - dont wait for the end of transitions
+      var delay = ( transitionsSupported() ) ? 1200 : 0;
+      setTimeout(function(){
+        //wait for the end of the transition on the loading bar before revealing the new content
+        $('body').removeClass('page-is-changing');
+        $('.loading-bar').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+          isAnimating = false;
+          $('.loading-bar').off('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend');
+        });
+
+        if( !transitionsSupported() ) isAnimating = false;
+      }, delay);
+
+      if(url!=window.location && bool){
+        //add the new page to the window.history
+        //if the new page was triggered by a 'popstate' event, don't add it
+        window.history.pushState({path: url},'',url);
+      }
+		});
+  }
+
+  function transitionsSupported() {
+      return $('html').hasClass('csstransitions');
+  }
+
 });

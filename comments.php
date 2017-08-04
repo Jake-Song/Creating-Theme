@@ -5,12 +5,6 @@
  * This is the template that displays the area of the page that contains both the current comments
  * and the comment form.
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package WordPress
- * @subpackage Twenty_Seventeen
- * @since 1.0
- * @version 1.0
  */
 
 /*
@@ -59,7 +53,7 @@ if ( post_password_required() ) {
 					'avatar_size' => 100,
 					'style'       => 'ol',
 					'short_ping'  => true,
-					'reply_text'  => '<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>' . __( ' 답글', 'mytheme' ),
+					'reply_text'  => '<span class="glyphicon glyphicon-transfer" aria-hidden="true"></span>' . __( ' 답글', 'mytheme' ),
 				) );
 			?>
 		</ol>
