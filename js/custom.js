@@ -117,5 +117,7 @@ var carousel = (function(){
     });
     slideNavigate(0);
 })
-
+$('.dropdown-toggle').on('click', function(e){
+  e.stopPropagation();
+});
 });

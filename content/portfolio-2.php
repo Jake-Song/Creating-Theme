@@ -13,10 +13,10 @@
                 <div class="dialog-slide">
                     <img class="show" src="./wp-content/uploads/2017/07/portfolio-vaga.jpg" alt="">
                     <img src="./wp-content/uploads/2017/07/portfolio-vaga-2.jpg" alt="">
-                    <img src="./wp-content/uploads/2017/07/portfolio-vaga-3.jpg" alt="">
+                    <img src="./wp-content/uploads/2017/08/portfolio-vaga-3.jpg" alt="">
                 </div>
                 <div class="dialog-text">
-                    <div class="dialog-title">
+                    <div class="dialog-title">  
                         <h2>베가본드 픽쳐스</h2>
                         <h4>프로젝트 베가본드 픽쳐스</h4>
                         <h4>URL vagabondpictures.kr</h4>

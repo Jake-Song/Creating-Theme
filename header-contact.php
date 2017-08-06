@@ -2,6 +2,7 @@
 <html <?php language_attributes(); ?> class="my-theme">
     <head>
         <meta name="viewport" content="width=device-width">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta charset="<?php bloginfo('charset'); ?>">
         <title><?php bloginfo('name'); ?></title>
         <?php wp_head(); ?>

@@ -157,5 +157,8 @@ jQuery( document ).ready( function($){
   function transitionsSupported() {
       return $('html').hasClass('csstransitions');
   }
-
+  
+  $('.dropdown-toggle').on('click', function(e){
+    e.stopPropagation();
+  });
 });

@@ -32,7 +32,7 @@
                   </h2>
                   <p class="a description">
                     <span class="a wrap">
-                      난이도   <span class="p-separator">|</span>   초급<br>
+                      난이도  <span class="p-separator">|</span>   초급<br>
                       영상개수   <span class="p-separator">|</span>   1개<br>
                       영상시간   <span class="p-separator">|</span>   1:20<br>
                       워드프레스 초보자분들도 무리없이 따라하시며<br>
@@ -42,7 +42,7 @@
                   </p>
                   <p class="a video-link-button">
                     <span class="a wrap">
-                      <a class="video-link" href="#">강좌 보기</a>
+                      <a class="video-link" href="./워드프레스-홈페이지-1시간-안에-만들기">강좌 보기</a>
                     </span>
                   </p>
               </div>
@@ -68,7 +68,7 @@
                   </p>
                   <p class="a video-link-button">
                     <span class="a wrap">
-                      <a class="video-link" href="#">강좌 보기</a>
+                      <a class="video-link" href="./왕초보도-하루만에-가능한-워드프레스-홈페이지-만">강좌 보기</a>
                     </span>
                   </p>
               </div>
@@ -92,7 +92,7 @@
                   </p>
                   <p class="a video-link-button">
                     <span class="a wrap">
-                      <a class="video-link" href="#">강좌 보기</a>
+                      <a class="video-link" href="./한국형-쇼핑몰-만들기">강좌 보기</a>
                     </span>
                   </p>
               </div>
@@ -115,7 +115,7 @@
                   </p>
                   <p class="a video-link-button">
                     <span class="a wrap">
-                      <a class="video-link" href="#">강좌 보기</a>
+                      <a class="video-link" href="./워드프레스-자유자재로-다루기">강좌 보기</a>
                     </span>
                   </p>
               </div>
@@ -177,11 +177,13 @@
                   <img src="./wp-content/themes/my-theme/img/portfolio-responsive.svg" alt="">
               </div>
           </div>
-            <?php for($i = 0; $i < 5; $i++) : ?>
-                <div class="col-sm-6 col-md-4">
-                    <?php get_template_part('/content/thumbnail', $i + 1); ?>
+                <div class="portfolio-container">
+                    <?php for($i = 0; $i < 5; $i++) : ?>
+                        <div class="col-sm-6 col-md-4">
+                            <?php get_template_part('/content/thumbnail', $i + 1); ?>
+                        </div>
+                    <?php endfor; ?>
                 </div>
-            <?php endfor; ?>
     </article>
 
     <article class="contact"></article>

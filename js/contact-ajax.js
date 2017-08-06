@@ -53,4 +53,9 @@ jQuery( document ).ready( function($){
       });
 
     });
+
+    $('.dropdown-toggle').on('click', function(e){
+      e.stopPropagation();
+    });
+    
 });
