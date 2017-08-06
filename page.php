@@ -72,11 +72,11 @@
                             endif;
                         ?>
                         <div class="cover-layer"></div>
-                        <div class="loading-bar"></div>
+                        <div class="loading-bar-container">
+                            <div class="loading-bar"></div>
+                        </div>
                     </div>
-
-
-                    </div>
+                </div>
                 </article>
       <?php
 

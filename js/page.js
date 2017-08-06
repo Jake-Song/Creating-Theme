@@ -1,4 +1,5 @@
 jQuery( document ).ready( function($){
+
     //sub-menu fixing
     var height = $('.site-header.page').height() + 25;
     var sideBox = $('.sidebox');
@@ -68,6 +69,13 @@ jQuery( document ).ready( function($){
       if( !isAnimating ) changePage(newPage, true);
       firstLoad = true;
     }
+      if( $(document).scrollTop() < 280){
+        var offset = (280 - $(document).scrollTop()) / 2;
+        $('.loading-bar-container').css('margin-top', offset);
+      } else{
+        $('.loading-bar-container').css('margin-top', 0);
+      }
+      $('.loading-bar').css('background', '#adadad');
   });
 
   $(window).on('popstate', function() {
@@ -77,8 +85,20 @@ jQuery( document ).ready( function($){
       if it's false - the page has just been loaded
       */
       var newPage = location.href;
+      var subMenuLink = $('.sub-index-child li a');
+
+      $('.loading-bar').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+          subMenuLink.each(function(){
+            if( newPage == $(this).attr('href') ){
+              subMenuLink.parent().removeClass('current_page_item');
+              $(this).parent().addClass('current_page_item');
+            }
+          });
+        $('.loading-bar').off('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend');
+      });
 
       if( !isAnimating  &&  newLocation != newPage ) changePage(newPage, false);
+
     }
     firstLoad = true;
 	});
@@ -104,10 +124,17 @@ jQuery( document ).ready( function($){
     var section = $('<div class="content-box"></div>');
 
   	section.load(url+' .content-box > *', function(event){
+
       // load new content and replace <main> content with the new one
       $('.ajax-container').html(section);
       //if browser doesn't support CSS transitions - dont wait for the end of transitions
       var delay = ( transitionsSupported() ) ? 1200 : 0;
+      if( $(document).scrollTop() < 280){
+        var offset = (280 - $(document).scrollTop()) / 2;
+        $('.loading-bar-container').css('margin-top', offset);
+      }
+      $('.loading-bar').css('background', '#ffbc00');
+
       setTimeout(function(){
         //wait for the end of the transition on the loading bar before revealing the new content
         $('body').removeClass('page-is-changing');

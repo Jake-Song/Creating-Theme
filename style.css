@@ -68,6 +68,7 @@ article.post:last-of-type{
 /* 헤더 메뉴 */
 .site-header{
   position: relative;
+  z-index: 2;
 }
 .site-header nav{
     position: absolute;
@@ -813,13 +814,13 @@ article.page h2{
 }
 
 /* 페이지 전환 Ajax */
-.content-box::after, .content-box::before {
+body::after, body::before {
   /* these are the 2 half blocks which cover the content once the animation is triggered */
   content: '';
-  height: 50%;
-  width: 100%;
+  height: 50vh;
+  width: calc(70vw - 20px);
   position: fixed;
-  left: 0;
+  right: 0;
   background-color: #ffffff;
   z-index: 1;
   /* Force Hardware Acceleration */
@@ -862,20 +863,20 @@ body.page-is-changing::after, body.page-is-changing::before {
 }
 .cover-layer{
   position: fixed;
-  left: 50%;
+  right: 0%;
   top: 50%;
   bottom: auto;
-  right: auto;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -ms-transform: translateX(-50%) translateY(-50%);
-  -o-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
+  left: auto;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
   height: calc(100% - 20px);
-  width: calc(100% - 20px);
+  width: calc(70vw - 20px);
   opacity: 0;
   visibility: hidden;
-  background-color: #4089a6;
+  background-color: #fff;
   -webkit-transition: opacity 0.4s 0.4s, visibility 0s 0.8s;
   -moz-transition: opacity 0.4s 0.4s, visibility 0s 0.8s;
   transition: opacity 0.4s 0.4s, visibility 0s 0.8s;
@@ -887,13 +888,13 @@ body.page-is-changing::after, body.page-is-changing::before {
   -moz-transition: opacity 0.3s 0s, visibility 0s 0s;
   transition: opacity 0.3s 0s, visibility 0s 0s;
 }
-.loading-bar{
+.loading-bar-container{
   position: fixed;
   z-index: 2;
-  left: 50%;
+  right: 0;
   top: 50%;
   height: 2px;
-  width: 90%;
+  width: 70%;
   background-color: #4089a6;
   visibility: hidden;
   -webkit-transition: visibility 0s 0.4s, -webkit-transform 0.4s 0s ease-in;
@@ -907,10 +908,36 @@ body.page-is-changing::after, body.page-is-changing::before {
   -ms-transform: translateZ(0);
   -o-transform: translateZ(0);
   transform: translateZ(0);
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -ms-transform: translateX(-50%) translateY(-50%);
-  -o-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.loading-bar{
+  position: fixed;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  height: 2px;
+  width: 90%;
+  background-color: #adadad;
+  visibility: hidden;
+  -webkit-transition: visibility 0s 0.4s, -webkit-transform 0.4s 0s ease-in;
+  -moz-transition: visibility 0s 0.4s, -moz-transform 0.4s 0s ease-in;
+  transition: visibility 0s 0.4s, transform 0.4s 0s ease-in;
+  /* Force Hardware Acceleration */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
 }
 .loading-bar::before {
@@ -921,7 +948,7 @@ body.page-is-changing::after, body.page-is-changing::before {
   top: 0;
   height: 100%;
   width: 100%;
-  background-color: #283040;
+  background-color: #ffbc00;
   /* Force Hardware Acceleration */
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -943,10 +970,10 @@ body.page-is-changing::after, body.page-is-changing::before {
 }
 .page-is-changing .loading-bar {
   visibility: visible;
-  -webkit-transform: translateX(-50%) translateY(-50%) scaleX(0.3);
-  -moz-transform: translateX(-50%) translateY(-50%) scaleX(0.3);
-  -ms-transform: translateX(-50%) translateY(-50%) scaleX(0.3);
-  -o-transform: translateX(-50%) translateY(-50%) scaleX(0.3);
+  -webkit-transform: translateY(-50%) scaleX(0.3);
+  -moz-transform: translateY(-50%) scaleX(0.3);
+  -ms-transform: translateY(-50%) scaleX(0.3);
+  -o-transform: translateY(-50%) scaleX(0.3);
   transform: translateX(-50%) translateY(-50%) scaleX(0.3);
   -webkit-transition: visibility 0s 0.3s, -webkit-transform 0.4s 0.4s;
   -moz-transition: visibility 0s 0.3s, -moz-transform 0.4s 0.4s;
@@ -960,7 +987,7 @@ body.page-is-changing::after, body.page-is-changing::before {
   transform: scaleX(1);
   -webkit-transition: -webkit-transform 0.8s 0.8s ease-in;
   -moz-transition: -moz-transform 0.8s 0.8s ease-in;
-  transition: transform 0.8s 0.8s ease-in;
+  transition: transform 2.2s 0.8s ease-in-out;
 }
 /* 댓글 */
 #comments {
