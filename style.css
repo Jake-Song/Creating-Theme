@@ -309,13 +309,15 @@ article.video .title-box .main-title img{
   display: -ms-flexbox;
   display: flex;
   margin-top: 30px;
+  justify-content: space-around;
+  height: 310px;
 }
 .image-section{
   position: relative;
   width: 45vw;
   height: 50vh;
   overflow: hidden;
-  margin-left: 8vw;
+  align-self: center;
 }
 .image-section img{
   position: absolute;
@@ -1390,7 +1392,7 @@ div.single-post-image img.not-found{
 }
 
 /* 반응형 디자인 */
-@media only screen and ( max-width: 360px ) {
+@media only screen and ( max-width: 480px ) {
     .left-bracket, .right-bracket, .navbar-brand, .typewrite, .control,
     .video-backface, .text-section, .selector, .portfolio-backface,
     article.portfolio .title-box h4.sub-title, article.portfolio .title-box .bar,
@@ -1411,6 +1413,9 @@ div.single-post-image img.not-found{
     article.video .title-box{
       margin-left: 45px;
     }
+    article.video .video-container{
+      height: auto;
+    }
     .image-section{
       width: 90vw;
       height: auto;
@@ -1427,7 +1432,7 @@ div.single-post-image img.not-found{
       padding: 0;
     }
     .price-container .text-box{
-      padding: 0 50px 30px;
+      padding: 0 35px 30px;
       border-right: 0;
       border-bottom: 1px solid rgba(255,255,255,0.3);
     }
@@ -1448,7 +1453,7 @@ div.single-post-image img.not-found{
     }
     .thumbnail-project{
       float: left;
-      width: 62%;
+      width: 61%;
     }
     .thumbnail .caption .thumbnail-link{
       float: left;
@@ -1462,9 +1467,12 @@ div.single-post-image img.not-found{
       padding: 0;
     }
 }
-@media only screen and ( min-width: 361px ) and ( max-width: 980px ){
+@media only screen and ( min-width: 481px ) and ( max-width: 980px ){
     .left-bracket, .right-bracket{
       display: none;
+    }
+    .control{
+      margin-top: 2em;
     }
     article.video .video-backface{
       top: 2%;
@@ -1473,12 +1481,18 @@ div.single-post-image img.not-found{
     .price-container, .portfolio-title-container{
       flex-wrap: nowrap;
     }
+    article.page aside .side-menu{
+      flex-basis: 60%;
+    }
+    .ajax-container::after, .ajax-container::before{
+      width: calc(71.5vw - 20px);
+    }
 }
 @media only screen and ( min-width: 1301px ) and ( max-width: 1900px ){
 
     article.video .video-backface{
-      top: -4%;
-      right: 22%;
+      top: 0%;
+      right: 29%;
     }
     .video-container{
       margin-top: 45px;

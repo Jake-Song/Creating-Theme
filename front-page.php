@@ -53,8 +53,7 @@
                   </h4>
                   <h2 class="a main-title">
                       <span class="a wrap">
-                        왕초보도 하루만에 가능한 워드프레스<br>
-                        홈페이지 만들기
+                        왕초보도 하루만에 가능한 워드프레스 홈페이지 만들기
                       </span>
                   </h2>
                   <p class="a description">
