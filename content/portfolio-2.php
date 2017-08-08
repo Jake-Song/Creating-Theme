@@ -16,7 +16,7 @@
                     <img src="./wp-content/uploads/2017/08/portfolio-vaga-3.jpg" alt="">
                 </div>
                 <div class="dialog-text">
-                    <div class="dialog-title">  
+                    <div class="dialog-title">
                         <h2>베가본드 픽쳐스</h2>
                         <h4>프로젝트 베가본드 픽쳐스</h4>
                         <h4>URL vagabondpictures.kr</h4>
@@ -30,7 +30,7 @@
                         </p>
                     </div>
                     <div class="dialog-link">
-                        <a href="#" target="_blank">사이트 보기</a>
+                        <a href="http://www.vagabondpictures.kr" target="_blank">사이트 보기</a>
                     </div>
                 </div>
                 <div class="dialog-arrow-container">

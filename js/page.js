@@ -106,7 +106,7 @@ jQuery( document ).ready( function($){
   function changePage(url, bool) {
     isAnimating = true;
     // trigger page animation
-    $('body').addClass('page-is-changing');
+    $('.ajax-container').addClass('page-is-changing');
     $('.loading-bar').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
     	loadNewContent(url, bool);
       newLocation = url;
@@ -120,6 +120,8 @@ jQuery( document ).ready( function($){
 	}
 
   function loadNewContent(url, bool) {
+
+    $.ajaxSetup({ cache: false });
 
     var section = $('<div class="content-box"></div>');
 
@@ -137,7 +139,7 @@ jQuery( document ).ready( function($){
 
       setTimeout(function(){
         //wait for the end of the transition on the loading bar before revealing the new content
-        $('body').removeClass('page-is-changing');
+        $('.ajax-container').removeClass('page-is-changing');
         $('.loading-bar').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
           isAnimating = false;
           $('.loading-bar').off('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend');
@@ -157,7 +159,7 @@ jQuery( document ).ready( function($){
   function transitionsSupported() {
       return $('html').hasClass('csstransitions');
   }
-  
+
   $('.dropdown-toggle').on('click', function(e){
     e.stopPropagation();
   });

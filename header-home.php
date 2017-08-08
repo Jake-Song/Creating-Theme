@@ -57,6 +57,9 @@
                             <div class="play-button"><div class="arrow-right"></div></div>
                             <div class="pause-button"></div>
                         </div>
+                        <div class="responsive-title">
+                          <h2>CrackIt.</h2>
+                        </div>
                 </div>
                 <div class="separator"></div>
           </header>

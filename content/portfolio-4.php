@@ -30,7 +30,7 @@
                         </p>
                     </div>
                     <div class="dialog-link">
-                        <a href="#" target="_blank">사이트 보기</a>
+                        <a href="http://2ndwind.co.kr" target="_blank">사이트 보기</a>
                     </div>
                 </div>
                 <div class="dialog-arrow-container">

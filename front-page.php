@@ -7,7 +7,7 @@
       <div class="title-box">
         <h4>동영상 강좌</h4>
         <div class="main-title">
-          <?php echo file_get_contents( "./wp-content/themes/my-theme/img/stick.svg" ); ?>
+          <img src="./wp-content/themes/my-theme/img/stick.svg" alt="">
           <h2>워드프레스 강좌</h2>
         </div>
         <p>워드프레스에 대한 영상과 설명이 있습니다.</p>
@@ -185,7 +185,5 @@
                     <?php endfor; ?>
                 </div>
     </article>
-
-    <article class="contact"></article>
 
 <?php get_footer(); ?>
