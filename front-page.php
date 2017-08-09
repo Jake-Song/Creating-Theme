@@ -15,10 +15,10 @@
       <div class="video-container">
 
           <div class="image-section">
-            <img class="current" src="./wp-content/themes/my-theme/img/video-tutorial.svg" alt="">
-            <img class="" src="./wp-content/themes/my-theme/img/video-tutorial-2.svg" alt="">
-            <img class="" src="./wp-content/themes/my-theme/img/video-tutorial-3.svg" alt="">
-            <img class="" src="./wp-content/themes/my-theme/img/video-tutorial-4.svg" alt="">
+            <a href="./워드프레스-홈페이지-1시간-안에-만들기"><img class="current" src="./wp-content/themes/my-theme/img/video-tutorial.svg" alt=""></a>
+            <a href="./왕초보도-하루만에-가능한-워드프레스-홈페이지-만"><img class="" src="./wp-content/themes/my-theme/img/video-tutorial-2.svg" alt=""></a>
+            <a href="./한국형-쇼핑몰-만들기"><img class="" src="./wp-content/themes/my-theme/img/video-tutorial-3.svg" alt=""></a>
+            <a href="./워드프레스-자유자재로-다루기"><img class="" src="./wp-content/themes/my-theme/img/video-tutorial-4.svg" alt=""></a>
           </div>
 
           <div class="text-section">

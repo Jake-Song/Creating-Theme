@@ -26,9 +26,10 @@ function dev_enqueue_scripts(){
     wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/css/bootstrap.min.css' );
     wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), true );
     wp_enqueue_script( 'modernizr' );
-    wp_enqueue_script( 'typewriter' );
+    wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', array('jquery'), true ); 
 
     if( is_home() ) :
+        wp_enqueue_script( 'typewriter' );
         wp_enqueue_script( 'custom', get_template_directory_uri() . '/js/custom.js', array('jquery', 'typewriter') );
         elseif( is_page_template( 'page-contact.php' ) ) :
             wp_enqueue_script( 'contact', get_template_directory_uri() . '/js/contact-ajax.js', array('jquery') );

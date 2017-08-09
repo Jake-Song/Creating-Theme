@@ -23,7 +23,7 @@
                         </button>
                         <a class="navbar-brand" href="<?php echo home_url(); ?>"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
                       </div>
-
+                          <span class="menu-close">x</span>
                             <?php
                               $args = array(
                                 'theme_location' => 'primary',
