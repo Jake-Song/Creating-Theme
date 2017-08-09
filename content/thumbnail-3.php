@@ -1,5 +1,5 @@
 <div class="thumbnail">
-    <img class="thumbnail-image" src="./wp-content/uploads/2017/07/portfolio-demo.jpg" alt="...">
+    <img class="thumbnail-image" src="./wp-content/uploads/2017/08/portfolio-demo.jpg" alt="...">
     <div class="caption clearfix">
       <div class="thumbnail-project">
         <h3>강의용 데모사이트</h3>

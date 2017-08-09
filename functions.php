@@ -26,7 +26,7 @@ function dev_enqueue_scripts(){
     wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/css/bootstrap.min.css' );
     wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), true );
     wp_enqueue_script( 'modernizr' );
-    wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', array('jquery'), true ); 
+    wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', array('jquery'), true );
 
     if( is_home() ) :
         wp_enqueue_script( 'typewriter' );
@@ -216,7 +216,7 @@ function process_send_email(){
         $email_content .= "Message:\n$message\n";
 
         $email_headers = "From: $name <$email>";
-
+        
         // Send the email.
         if (wp_mail($recipient, $subject, $email_content, $email_headers)) {
             // Set a 200 (okay) response code.

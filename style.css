@@ -838,7 +838,7 @@ article.portfolio .thumbnail button{
 }
 /* 페이지 */
 .site-header.page{
-  background: url("../../uploads/2017/07/header-video.jpg");
+  background: url("../../uploads/2017/08/header-video.jpg");
   height: 250px;
   background-size: cover;
   background-position: center center;
@@ -1236,7 +1236,7 @@ cite.fn{
 
 /* 연락하기 */
 .site-header.contact{
-  background: url("../../uploads/2017/07/banner3.jpg");
+  background: url("../../uploads/2017/08/banner3.jpg");
   height: 250px;
   background-size: cover;
   background-position: center center;
@@ -1895,7 +1895,8 @@ div.single-post-image img.not-found{
     padding-left: 0;
   }
   .dialog-arrow-container{
-    flex-basis: 65%;
+    -ms-flex-preferred-size: 65%;
+        flex-basis: 65%;
     margin-top: -2em;
     margin-right: 0;
   }

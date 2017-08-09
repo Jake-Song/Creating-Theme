@@ -11,9 +11,9 @@
             </div>
             <div class="dialog-body">
                 <div class="dialog-slide">
-                    <img class="show" src="./wp-content/uploads/2017/07/portfolio-stepi.jpg" alt="">
-                    <img src="./wp-content/uploads/2017/07/portfolio-stepi-2.jpg" alt="">
-                    <img src="./wp-content/uploads/2017/07/portfolio-stepi-3.jpg" alt="">
+                    <img class="show" src="./wp-content/uploads/2017/08/portfolio-stepi.jpg" alt="">
+                    <img src="./wp-content/uploads/2017/08/portfolio-stepi-2.jpg" alt="">
+                    <img src="./wp-content/uploads/2017/08/portfolio-stepi-3.jpg" alt="">
                 </div>
                 <div class="dialog-text">
                     <div class="dialog-title">

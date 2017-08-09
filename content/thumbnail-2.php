@@ -1,5 +1,5 @@
 <div class="thumbnail">
-    <img class="thumbnail-image" src="./wp-content/uploads/2017/07/portfolio-vaga.jpg" alt="...">
+    <img class="thumbnail-image" src="./wp-content/uploads/2017/08/portfolio-vaga.jpg" alt="...">
     <div class="caption clearfix">
       <div class="thumbnail-project">
         <h3>베가본드 픽쳐스</h3>

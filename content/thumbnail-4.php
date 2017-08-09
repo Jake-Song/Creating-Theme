@@ -1,5 +1,5 @@
 <div class="thumbnail">
-    <img class="thumbnail-image" src="./wp-content/uploads/2017/07/portfolio-seco.jpg" alt="...">
+    <img class="thumbnail-image" src="./wp-content/uploads/2017/08/portfolio-seco.jpg" alt="...">
     <div class="caption clearfix">
       <div class="thumbnail-project">
         <h3>세컨드 윈드</h3>

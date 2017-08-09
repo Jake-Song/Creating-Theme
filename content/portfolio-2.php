@@ -11,8 +11,8 @@
             </div>
             <div class="dialog-body">
                 <div class="dialog-slide">
-                    <img class="show" src="./wp-content/uploads/2017/07/portfolio-vaga.jpg" alt="">
-                    <img src="./wp-content/uploads/2017/07/portfolio-vaga-2.jpg" alt="">
+                    <img class="show" src="./wp-content/uploads/2017/08/portfolio-vaga.jpg" alt="">
+                    <img src="./wp-content/uploads/2017/08/portfolio-vaga-2.jpg" alt="">
                     <img src="./wp-content/uploads/2017/08/portfolio-vaga-3.jpg" alt="">
                 </div>
                 <div class="dialog-text">
