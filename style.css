@@ -1885,6 +1885,20 @@ div.single-post-image img.not-found{
   article.portfolio .title-box{
     margin-left: 80px;
   }
+  .dialog-content{
+    height: 65%;
+  }
+  .dialog-content .dialog-body .dialog-slide{
+    height: 300px;
+  }
+  .dialog-content .dialog-body .dialog-text{
+    padding-left: 0;
+  }
+  .dialog-arrow-container{
+    flex-basis: 65%;
+    margin-top: -2em;
+    margin-right: 0;
+  }
 }
 @media only screen and ( min-width: 1301px ) and ( max-width: 1900px ){
 
