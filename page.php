@@ -8,7 +8,10 @@
                         <div class="side-menu">
                             <nav class="site-nav sub-nav">
                                 <?php if( has_children() || $post->post_parent ) : ?>
-                                  <span class="side-menu-title"><h2>차례</h2></span>
+                                  <span class="side-menu-title">
+                                    <h2>목록</h2>
+                                    <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+                                  </span>
                                   <div class="sub-index-child">
                                       <ol>
                                           <?php
@@ -23,7 +26,7 @@
                                       </ol>
                                   </div>
                                   <?php else : ?>
-                                    <span class="side-menu-title"><h2>차례</h2></span>
+                                    <span class="side-menu-title"><h2>순서</h2></span>
                                     <div class="sub-index">
                                         <ol>
                                             <li>

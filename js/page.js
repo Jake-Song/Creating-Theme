@@ -163,4 +163,13 @@ jQuery( document ).ready( function($){
   $('.dropdown-toggle').on('click', function(e){
     e.stopPropagation();
   });
+  
+  $('.side-menu-title').on('click', 'h2', function(e){
+    if( $('.sub-index-child').hasClass('show') ){
+      $('.sub-index-child').removeClass('show');
+    } else {
+      $('.sub-index-child').addClass('show');
+    }
+
+  });
 });

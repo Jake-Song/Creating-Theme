@@ -45,7 +45,7 @@ Template Name: 연락하기
                                 </select>
                             </div>
 
-                            <div class="field">
+                            <div class="field message-field">
                                 <label for="message">내용</label>
                                 <textarea id="message" name="message" required></textarea>
                             </div>
