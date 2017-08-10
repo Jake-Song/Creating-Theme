@@ -8,7 +8,6 @@ Version: 1.0.0
 
 /* 폰트 */
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
-@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-js.css);
 
 /* Clearfix */
 .clearfix::before, .clearfix::after{
@@ -967,6 +966,9 @@ article.page h2{
 .content-box p:first-of-type{
   text-align: center;
 }
+.text-description{
+  padding: 10px 80px;
+}
 .content-video-tutorial h4{
   display: inline-block;
   padding-right: 5px;
@@ -1312,6 +1314,10 @@ article.contact .content-box .content-box-title svg{
 .field input{
   width: 250px;
   margin: 0 24px;
+}
+.field input:required, .field textarea:required{
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 .field select{
   width: 150px;

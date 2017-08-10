@@ -30,7 +30,7 @@ jQuery( document ).ready( function($){
         $(formMessages).removeClass('error');
         $(formMessages).addClass('success');
 
-        $(formMessages).text(response);
+        $(formMessages).text(response.data);
 
         $('#name').val('');
         $('#email').val('');
@@ -57,5 +57,5 @@ jQuery( document ).ready( function($){
     $('.dropdown-toggle').on('click', function(e){
       e.stopPropagation();
     });
-    
+
 });

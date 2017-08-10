@@ -29,16 +29,16 @@ Template Name: 연락하기
                             <div class="info-field">
                                 <div class="field">
                                     <label for="name">이름</label>
-                                    <input type="text" id="name" name="name" required>
+                                    <input type="text" id="name" name="name" required="required">
                                 </div>
                                 <div class="field">
                                     <label for="email">이메일</label>
-                                    <input type="email" id="email" name="email" required>
+                                    <input type="email" id="email" name="email" required="required">
                                 </div>
                             </div>
                             <div class="field">
                                 <label for="sort">구분</label>
-                                <select name="sort" id="sort" required>
+                                <select name="sort" id="sort">
                                     <option value=""></option>
                                     <option value="question">동영상강좌</option>
                                     <option value="order">견적의뢰</option>
@@ -47,7 +47,7 @@ Template Name: 연락하기
 
                             <div class="field message-field">
                                 <label for="message">내용</label>
-                                <textarea id="message" name="message" required></textarea>
+                                <textarea id="message" name="message" required="required"></textarea>
                             </div>
 
                             <input type="text" id="xyq" name="<?php echo apply_filters( 'honeypot_name', 'data-submitted' ) ?>" value="" style="display: none;">

@@ -184,7 +184,7 @@ function qt_custom_breadcrumbs() {
 
 // ajax
 function process_send_email(){
-
+  $test = 0;
   	if ( ! check_ajax_referer( 'user-submitted-question', 'security' ) ) {
   		wp_send_json_error( 'Security Check failed' );
   	}
@@ -201,9 +201,7 @@ function process_send_email(){
 
         if ( empty($name) OR empty($message) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
-            http_response_code(400);
-            echo "Oops! There was a problem with your submission. Please complete the form and try again.";
-            exit;
+            wp_send_json_error("메일주소가 유효하지 않습니다. 다시 작성해주세요.");
         }
 
         $recipient = get_option( 'admin_email' );
@@ -216,23 +214,24 @@ function process_send_email(){
         $email_content .= "Message:\n$message\n";
 
         $email_headers = "From: $name <$email>";
-        
+
         // Send the email.
         if (wp_mail($recipient, $subject, $email_content, $email_headers)) {
             // Set a 200 (okay) response code.
-            http_response_code(200);
-            wp_send_json_success("Thank You! Your message has been sent.");
+
+            wp_send_json_success("감사합니다! 메세지가 성공적으로 보내졌습니다.");
         } else {
             // Set a 500 (internal server error) response code.
-            http_response_code(500);
-            wp_send_json_error("Oops! Something went wrong and we couldn't send your message.");
+
+            wp_send_json_error("뭔가 문제가 있습니다. 관리자에게 연락하세요.");
 
         }
 
     } else {
         // Not a POST request, set a 403 (forbidden) response code.
-        http_response_code(403);
-        echo "There was a problem with your submission, please try again.";
+
+        wp_send_json_error("정상적인 방법이 아닙니다.");
+
     }
 
 }
