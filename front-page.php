@@ -170,7 +170,7 @@
                       <img src="./wp-content/themes/my-theme/img/bar.svg" alt="">
                   </div>
                   <h4 class="sub-title">테마 수정 및 테마 자체 개발</h4>
-                  <p>웹에서 구현되는 기능 및 디자인은 워드프레스도 가능합니다.</p>
+                  <p>자체 개발로 맞춤형 디자인 및 기능 제공</p>
               </div>
               <div class="image-box">
                   <img src="./wp-content/themes/my-theme/img/portfolio-responsive.svg" alt="">
