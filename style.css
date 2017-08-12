@@ -1466,8 +1466,8 @@ div.single-post-image img.not-found{
     }
     .image-section img{
       position: inherit;
-      -webkit-transform: unset;
-              transform: unset;
+      -webkit-transform: initial;
+              transform: initial;
       margin-bottom: 30px;
       -webkit-transition: none;
       transition: none;
