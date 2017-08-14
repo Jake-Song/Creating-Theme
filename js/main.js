@@ -1,6 +1,6 @@
 jQuery( document ).ready( function($){
-  $('.menu-close').on('click', function(){
-    $('button.navbar-toggle').addClass('collapsed').attr('aria-expanded', false);
-    $('#primary-menu').removeClass('in');
+    $('.navbar-toggle').on('click', function(e){
+    e.stopImmediatePropagation();
+    $('.navbar.navbar-default').toggleClass('show-menu');
   });
 });
