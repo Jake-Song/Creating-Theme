@@ -3,10 +3,10 @@
     <div class="caption clearfix">
       <div class="thumbnail-project">
         <h3>StepiZin</h3>
-        <p>www.stepi.cafe24.com</p>
+        <p>stepi.cafe24.com</p>
       </div>
       <p class="thumbnail-link">
-          <a href="http://www.stepi.cafe24.com" target="_blank" class="btn btn-primary" role="button">사이트 보기</a>
+          <a href="http://stepi.cafe24.com" target="_blank" class="btn btn-primary" role="button">사이트 보기</a>
           <button type="button" class="dialog-button">프로젝트 보기</button>
       </p>
     </div>

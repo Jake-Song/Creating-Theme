@@ -19,7 +19,7 @@
                     <div class="dialog-title">
                         <h2>StepiZin</h2>
                         <h4>프로젝트 Stepi 웹진</h4>
-                        <h4>URL stepizin.cafe24.com</h4>
+                        <h4>URL stepi.cafe24.com</h4>
                     </div>
                     <div class="dialog-description">
                         <h4>주요기능</h4>
@@ -30,7 +30,7 @@
                         </p>
                     </div>
                     <div class="dialog-link">
-                        <a href="http://stepizin.cafe24.com" target="_blank">사이트 보기</a>
+                        <a href="http://stepi.cafe24.com" target="_blank">사이트 보기</a>
                     </div>
                 </div>
                 <div class="dialog-arrow-container">
