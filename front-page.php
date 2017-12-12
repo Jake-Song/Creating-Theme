@@ -177,7 +177,7 @@
               </div>
           </div>
                 <div class="portfolio-container">
-                    <?php for($i = 0; $i < 5; $i++) : ?>
+                    <?php for($i = 0; $i < 6; $i++) : ?>
                         <div class="col-sm-6 col-md-4">
                             <?php get_template_part('/content/thumbnail', $i + 1); ?>
                         </div>

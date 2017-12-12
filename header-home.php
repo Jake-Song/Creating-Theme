@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="my-theme">
     <head>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110377552-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-110377552-1');
+        </script>
+
         <meta name="viewport" content="width=device-width">
         <meta charset="<?php bloginfo('charset'); ?>">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
