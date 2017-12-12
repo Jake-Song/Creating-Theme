@@ -5,7 +5,7 @@
   get_header( 'home' );
 ?>
     <article id="kakao-talkroom">
-      <p>워드프레스 카카오톡 단체방 만들었습니다. <strong>아이디 rivang</strong>추가하시고 단톡방 외쳐주세요.</p>
+      <p>워드프레스 카카오톡 단체방 만들었습니다. 관심있으시면 <strong>아이디 rivang</strong>추가하시고 단톡방 외쳐주세요.</p>
       <p>워드프레스에 관심있는 일반인, 기획자, 디자이너, 개발자 모두 환영합니다!</p>
       <a href="">상세 글 보기</a>
     </article>
