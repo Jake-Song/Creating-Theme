@@ -7,7 +7,6 @@
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-
           gtag('config', 'UA-110377552-1');
         </script>
 
@@ -53,7 +52,11 @@
 
                 </nav>
                 <div class="header-title">
+                    <?php if( !is_single() ) : ?>
                     동영상 강좌
+                    <?php else : ?>
+                    블로그
+                    <?php endif; ?>
                 </div>
                 <div class="separator"></div>
             </header>

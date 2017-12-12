@@ -1,5 +1,14 @@
-<?php get_header( 'home' ); ?>
-
+<?php
+/*
+  Template Name: 홈페이지
+*/
+  get_header( 'home' );
+?>
+    <article id="kakao-talkroom">
+      <p>워드프레스 카카오톡 단체방 만들었습니다. <strong>아이디 rivang</strong>추가하시고 단톡방 외쳐주세요.</p>
+      <p>워드프레스에 관심있는 일반인, 기획자, 디자이너, 개발자 모두 환영합니다!</p>
+      <a href="">상세 글 보기</a>
+    </article>
     <article class="video clearfix">
       <div class="video-backface">
         <img src="./wp-content/themes/my-theme/img/video-text.svg" alt="">
@@ -177,7 +186,7 @@
               </div>
           </div>
                 <div class="portfolio-container">
-                    <?php for($i = 0; $i < 6; $i++) : ?>
+                    <?php for($i = 0; $i < 5; $i++) : ?>
                         <div class="col-sm-6 col-md-4">
                             <?php get_template_part('/content/thumbnail', $i + 1); ?>
                         </div>

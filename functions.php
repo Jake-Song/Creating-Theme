@@ -28,7 +28,7 @@ function dev_enqueue_scripts(){
     wp_enqueue_script( 'modernizr' );
     wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', array('jquery'), true );
 
-    if( is_home() ) :
+    if( is_page_template( 'template-home.php' ) ) :
         wp_enqueue_script( 'typewriter' );
         wp_enqueue_script( 'custom', get_template_directory_uri() . '/js/custom.js', array('jquery', 'typewriter') );
         elseif( is_page_template( 'page-contact.php' ) ) :

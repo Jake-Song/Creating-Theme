@@ -267,6 +267,25 @@ article.post:last-of-type{
 .responsive-title{
   display: none;
 }
+
+/* 카톡 단톡방 */
+#kakao-talkroom{
+  text-align: center;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #ddd;
+  background: #f7f7f7;
+  padding: 1em 0;
+}
+#kakao-talkroom a{
+  display: none;
+  color: #333;
+  border: 1px solid #adadad;
+  padding: 5px 30px;
+  border-radius: 3px;
+  font-size: 1rem;
+  margin: 1em 0;
+}
+
 /* 동영상 */
 article.video{
   position: relative;
@@ -1378,6 +1397,7 @@ img.not-found{
   height: 200px;
 }
 article.post{
+  margin-top: 3em;
   padding-bottom: 20px;
 }
 
@@ -1404,6 +1424,9 @@ div.single-post-image img.not-found{
   height: 6px;
   border-top: 1px solid #e0dede;
   border-bottom: 1px solid #e0dede;
+}
+.author-info{
+  padding: 0 2em;
 }
 .avatar{
   float: left;
