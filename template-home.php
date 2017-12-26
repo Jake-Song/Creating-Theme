@@ -155,7 +155,7 @@
 
               <?php for($i = 0; $i < 3; $i++) : ?>
 
-                      <?php get_template_part('/content/price', $i + 1); ?>
+                <?php get_template_part('/content/price', $i + 1); ?>
 
               <?php endfor; ?>
          </div>
@@ -185,13 +185,13 @@
                   <img src="./wp-content/themes/my-theme/img/portfolio-responsive.svg" alt="">
               </div>
           </div>
-                <div class="portfolio-container">
-                    <?php for($i = 0; $i < 5; $i++) : ?>
-                        <div class="col-sm-6 col-md-4">
-                            <?php get_template_part('/content/thumbnail', $i + 1); ?>
-                        </div>
-                    <?php endfor; ?>
-                </div>
+          <div class="portfolio-container">
+              <?php for($i = 0; $i < 6; $i++) : ?>
+                  <div class="col-sm-6 col-md-4">
+                      <?php get_template_part('/content/thumbnail', $i + 1); ?>
+                  </div>
+              <?php endfor; ?>
+          </div>
     </article>
 
 <?php get_footer(); ?>
